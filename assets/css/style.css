@@ -1,0 +1,17 @@
+header {
+    background-color: aqua;
+}
+
+#high-score {
+    text-align: right;
+    padding: 40px;
+}
+
+#timer { 
+    padding: 40px;
+}
+
+#start-quiz {
+    padding: 55px;
+    margin: 100px;
+}
