@@ -14,20 +14,29 @@
 <body>
 
     <!-- Header Row for Score & Timer -->
-    <div class="row">
-
-        <div class="col-6 ">
-            <h5 id="timer">
-                </h2>
+    <div class ="row" id="title-heading">
+        <div class= "col-12">
+            <h2>Coding Quiz! </h2>
         </div>
+    </div>
 
-        <div class="col-6">
-            <h5 id="high-score">View High Scores </h2>
+    <div class="row text-center">
+
+        <div class="col-12 text-center hidden-element" id="timer-display">
+            <h5 class="text-danger" id="timer-header">Timer:</h5>
+            <h5 id="timer"></h5>
         </div>
+    </div>
 
-        </header>
+
+    <div class="row ">
+        <div class="col-12 text-center">
+            <button class="btn btn-outline-secondary" id="high-score">View High Scores </button>
+        </div>
     </div>
-    </div>
+
+    </header>
+
 
     <!-- Start Quiz Button -->
 
@@ -42,11 +51,11 @@
     </div>
 
 
-    <div class="row hidden-element"   id = "questions-display">
-        <div class = "col-12 text-center">
-            <div class = "text-black-50" id="questions"></div>
+    <div class="row hidden-element" id="questions-display">
+        <div class="col-12 text-center">
+            <div class="text-black-50" id="questions"></div>
             <br>
-            <div id="choices" class="btn-group" role="group" >
+            <div id="choices" class="btn-group" role="group">
                 <button type="button" class="btn btn-info" id=choice-1></button>
                 <button type="button" class="btn btn-secondary" id=choice-2></button>
                 <button type="button" class="btn btn-info" id=choice-3></button>

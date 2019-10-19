@@ -1,9 +1,13 @@
 //startButton Counter
+var titleHeading = document.querySelector("#title-heading");
 var startButton = document.querySelector("#start-quiz-btn");
+var highScoreButton = document.querySelector("#high-score");
+var timerDisplay = document.querySelector("#timer-display")
 var timerDiv = document.querySelector("#timer");
 var questionsDisplay = document.querySelector("#questions-display");
-timerDiv.textContent = 75;
 
+// Timer: initialize data
+timerDiv.textContent = (75 + " seconds");
 var counter = parseInt(timerDiv.textContent);
 var timeInterval = ""
 
@@ -52,7 +56,10 @@ var questions = [
 
 startButton.addEventListener("click", function () {
     startButton.style.display = "none";
-    questionsDisplay.classList.remove("hidden-element"); 
+    highScoreButton.style.display = "none";
+    titleHeading.style.display = "none";
+    timerDisplay.classList.remove("hidden-element");
+    questionsDisplay.classList.remove("hidden-element");
     printQuestion();
     printChoices();
     timeInterval = setInterval(timeCounter, 1000);
@@ -62,7 +69,7 @@ startButton.addEventListener("click", function () {
 
 function timeCounter() {
     counter = counter - 1
-    timerDiv.textContent = counter;
+    timerDiv.textContent = (counter + " seconds");
     // printQuestion();
     if (counter < 1) {
         clearInterval(timeInterval);

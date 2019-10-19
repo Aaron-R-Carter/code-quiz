@@ -2,23 +2,38 @@ body {
     overflow: hidden;
 }
 
+#title-heading{
+    margin: 55px;
+    text-align: center;
+}
+
 
 #high-score {
-    text-align: right;
-    padding: 40px;
+    /* text-align: right; */
+    /* margin-top: 55px; */
+    /* padding-left: 40px;
+    padding-right: 40px; */
 }
 
 #timer { 
-    padding: 40px;
+    margin-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#timer-header { 
+    margin-top: 55px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #start-quiz-btn {
     padding: 55px;
-    margin: 100px;
+    margin: 55px;
 }
 
-/* #questions {
-    background-color: black; */
+#questions-display {
+    margin-top:55px;
+}
 
 
  
