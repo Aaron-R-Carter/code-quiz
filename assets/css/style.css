@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 header {
     background-color: aqua;
 }
@@ -11,7 +15,7 @@ header {
     padding: 40px;
 }
 
-#start-quiz {
+#start-quiz-btn {
     padding: 55px;
     margin: 100px;
 }

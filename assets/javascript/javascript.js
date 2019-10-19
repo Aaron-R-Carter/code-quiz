@@ -1,48 +1,85 @@
-// Questions   
 
 
+//startButton Counter
+var startButton = document.querySelector("#start-quiz-btn");
+var timerDiv = document.querySelector("#timer");
+timerDiv.textContent = 75;
 
-// create header
+var counter = parseInt(timerDiv.textContent);
 
-// create "start quiz" button
+var timeInterval = ""
 
-// make spot and text for Timer set to 0 default in Nav
+//questions
 
-// "View High Scores" Link/button in Nav
+var questions = [
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts"
+    },
+    {
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
 
-// questions div
+];
 
-// answers div
+//start button click event function
 
-// final score div
-
-// initials input
-
-// "Start Quiz" button starts quiz by disappearing 
-
-var startButton = document.querySelector("#start-quiz");
-
-startButton.addEventListener("click", function(){
-    startButton.style.display= "none";
-    
-
+startButton.addEventListener("click", function () {
+    startButton.style.display = "none";
+    timeInterval = setInterval(timeCounter, 1000);
 })
 
+// time counter function
 
-// and loading what's next >>
+function timeCounter() {
+    counter = counter - 1
+    timerDiv.textContent = counter;
+    if (counter < 1) {
+        clearInterval(timeInterval);
+
+    }
+}
+
+//print question function
+
+function printQuestion() {
+
+
+
+}
+
+console.log(questions[0].title)
+
+
+
+
+
+// startButton.addEventListener("click", myInterval)
+
+
+// timerElement.textConent = timerText; 
+
+
+
+// function to decrement timerText
+
+// while (counter > -1 && < 75){ 
+
+//     var myInterval = setInterval(function () {
+//   timerText = timerText-- ;
+// }, 1000)};
+
+
 
 // upon "start" button, a question and multiple choice options appear
 
 // set choices to correct or incorrect
 
-// timer running function
+// store time
+
+
 
 // score and initials local storage
-
-
-
-
-
-
-
-
