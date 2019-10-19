@@ -1,20 +1,43 @@
-
-
 //startButton Counter
 var startButton = document.querySelector("#start-quiz-btn");
 var timerDiv = document.querySelector("#timer");
+var questionsDisplay = document.querySelector("#questions-display");
 timerDiv.textContent = 75;
 
 var counter = parseInt(timerDiv.textContent);
-
 var timeInterval = ""
 
-//questions
+//questions, choices & answers
+
+var questionsDiv = document.querySelector("#questions");
+var choicesDiv = document.querySelector("#choices");
 
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
+        choices: ["Strings ", "Booleans ", "Alerts ", "Numbers "],
+        answer: "alerts"
+    },
+    {
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings ", "booleans ", "alerts ", "numbers "],
+        answer: "alerts"
+    },
+    {
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings ", "booleans ", "alerts ", "numbers "],
         answer: "alerts"
     },
     {
@@ -29,6 +52,9 @@ var questions = [
 
 startButton.addEventListener("click", function () {
     startButton.style.display = "none";
+    questionsDisplay.classList.remove("hidden-element"); 
+    printQuestion();
+    printChoices();
     timeInterval = setInterval(timeCounter, 1000);
 })
 
@@ -37,21 +63,36 @@ startButton.addEventListener("click", function () {
 function timeCounter() {
     counter = counter - 1
     timerDiv.textContent = counter;
+    // printQuestion();
     if (counter < 1) {
         clearInterval(timeInterval);
-
     }
 }
 
 //print question function
 
 function printQuestion() {
+    questionsDiv.textContent = questions[0].title;
+}
+
+//print choices function
+
+var choice1 = document.querySelector("#choice-1");
+var choice2 = document.querySelector("#choice-2");
+var choice3 = document.querySelector("#choice-3");
+var choice4 = document.querySelector("#choice-4");
+
+var choicesArray = [choice1, choice2, choice3, choice4];
 
 
+function printChoices() {
+    for (var i = 0; i < questions[0].choices.length; i++) {
+        choicesArray[i].textContent = questions[0].choices[i];
+
+    }
 
 }
 
-console.log(questions[0].title)
 
 
 

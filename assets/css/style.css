@@ -2,9 +2,6 @@ body {
     overflow: hidden;
 }
 
-header {
-    background-color: aqua;
-}
 
 #high-score {
     text-align: right;
@@ -19,3 +16,15 @@ header {
     padding: 55px;
     margin: 100px;
 }
+
+/* #questions {
+    background-color: black; */
+
+
+ 
+.hidden-element{
+    display:none;
+} 
+
+
+

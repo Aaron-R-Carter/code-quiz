@@ -17,7 +17,8 @@
     <div class="row">
 
         <div class="col-6 ">
-            <h5 id="timer"></h2>
+            <h5 id="timer">
+                </h2>
         </div>
 
         <div class="col-6">
@@ -41,15 +42,18 @@
     </div>
 
 
-
-    <div id="questions"></div>
-    <div id="choices">
-        <div id=choice-1></div>
-        <div id=choice-2></div>
-        <div id=choice-3></div>
-        <div id=choice-4></div>
+    <div class="row hidden-element"   id = "questions-display">
+        <div class = "col-12 text-center">
+            <div class = "text-black-50" id="questions"></div>
+            <br>
+            <div id="choices" class="btn-group" role="group" >
+                <button type="button" class="btn btn-info" id=choice-1></button>
+                <button type="button" class="btn btn-secondary" id=choice-2></button>
+                <button type="button" class="btn btn-info" id=choice-3></button>
+                <button type="button" class="btn btn-secondary" id=choice-4></button>
+            </div>
+        </div>
     </div>
-
     <div id="is-correct"></div>
 
     <div id="final-score"></div>
@@ -64,8 +68,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
     <script src="assets/javascript/javascript.js"></script>
 
 </body>
