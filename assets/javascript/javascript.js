@@ -33,10 +33,6 @@ var questions = [
 
 ];
 
-var correctAnswers = questions.answer[0];
-
-console.log(correctAnswers);
-
 //start button click event function
 
 startButton.addEventListener("click", function () {
