@@ -1,4 +1,5 @@
-//startButton Counter
+// Div Selectors
+
 var titleHeading = document.querySelector("#title-heading");
 var startButton = document.querySelector("#start-quiz-btn");
 var highScoreButton = document.querySelector("#high-score");
@@ -6,7 +7,9 @@ var timerDisplay = document.querySelector("#timer-display")
 var timerDiv = document.querySelector("#timer");
 var questionsDisplay = document.querySelector("#questions-display");
 
+
 // Timer: initialize data
+
 timerDiv.textContent = (75 + " seconds");
 var counter = parseInt(timerDiv.textContent);
 var timeInterval = ""
@@ -28,29 +31,11 @@ var questions = [
         answer: "parentheses"
     },
 
-    {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings ", "booleans ", "alerts ", "numbers "],
-        answer: "alerts"
-    },
-    {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
-    },
-
-    {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings ", "booleans ", "alerts ", "numbers "],
-        answer: "alerts"
-    },
-    {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
-    },
-
 ];
+
+var correctAnswers = questions.answer[0];
+
+console.log(correctAnswers);
 
 //start button click event function
 
@@ -77,6 +62,7 @@ function timeCounter() {
 }
 
 //print question function
+
 
 function printQuestion() {
     questionsDiv.textContent = questions[0].title;
@@ -105,29 +91,8 @@ function printChoices() {
 
 
 
-// startButton.addEventListener("click", myInterval)
-
-
-// timerElement.textConent = timerText; 
-
-
-
-// function to decrement timerText
-
-// while (counter > -1 && < 75){ 
-
-//     var myInterval = setInterval(function () {
-//   timerText = timerText-- ;
-// }, 1000)};
-
-
-
-// upon "start" button, a question and multiple choice options appear
-
 // set choices to correct or incorrect
 
 // store time
-
-
 
 // score and initials local storage
