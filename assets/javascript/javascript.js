@@ -1,4 +1,4 @@
-// Div Selectors
+// div selectors
 
 var titleHeading = document.querySelector("#title-heading");
 var startButton = document.querySelector("#start-quiz-btn");
@@ -8,17 +8,23 @@ var timerDiv = document.querySelector("#timer");
 var questionsDisplay = document.querySelector("#questions-display");
 var isCorrect = document.querySelector("#is-correct");
 
-
-// Timer: initialize data
-
-timerDiv.textContent = (75 + " seconds");
-var counter = parseInt(timerDiv.textContent);
-var timeInterval = ""
-
-//questions, choices & answers
+// divs for questions, choices & answers
 
 var questionsDiv = document.querySelector("#questions");
 var choicesDiv = document.querySelector("#choices");
+
+// button selector variables
+
+var choice1 = document.querySelector("#choice-1");
+var choice2 = document.querySelector("#choice-2");
+var choice3 = document.querySelector("#choice-3");
+var choice4 = document.querySelector("#choice-4");
+
+// array of buttons to input text content
+
+var choicesArray = [choice1, choice2, choice3, choice4];
+
+// questions
 
 var questions = [
     {
@@ -34,6 +40,13 @@ var questions = [
 
 ];
 
+// Timer: initialize data
+
+timerDiv.textContent = (75 + " seconds");
+var counter = parseInt(timerDiv.textContent);
+var timeInterval = ""
+
+
 //start button click event function
 
 startButton.addEventListener("click", function () {
@@ -45,6 +58,9 @@ startButton.addEventListener("click", function () {
     printQuestion();
     timeInterval = setInterval(timeCounter, 1000);
 })
+
+
+/////// FUNCTIONS /////////
 
 // time counter function
 
@@ -61,17 +77,6 @@ function timeCounter() {
 
 function printQuestion() {
 
-    // button selector variables
-
-    var choice1 = document.querySelector("#choice-1");
-    var choice2 = document.querySelector("#choice-2");
-    var choice3 = document.querySelector("#choice-3");
-    var choice4 = document.querySelector("#choice-4");
-
-    // array of buttons to input text content
-
-    var choicesArray = [choice1, choice2, choice3, choice4];
-
     //loop to print text of choices 
 
     for (var i = 0; i < questions[0].choices.length; i++) {
@@ -84,17 +89,6 @@ function printQuestion() {
 }
 
 
-
-if (questions[i].choices[0] === questions[i].answer) {
-    isCorrect.textContent = "Correct!";
-    score++;
-}
-else {
-    isCorrect.textContent = "Wrong!";
-    secondsLeft -= 10;
-}
-i++;
-questionSetter();
 
 
 // set choices to correct or incorrect
