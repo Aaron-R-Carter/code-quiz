@@ -81,11 +81,10 @@ function printQuestion() {
 
     for (var i = 0; i < questions[0].choices.length; i++) {
         choicesArray[i].textContent = questions[0].choices[i];
-    }
+        questionsDiv.textContent = questions[0].title;
 
-    //prints question
+    };
 
-    questionsDiv.textContent = questions[0].title;
 }
 
 

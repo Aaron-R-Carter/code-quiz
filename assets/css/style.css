@@ -42,4 +42,7 @@ body {
 } 
 
 
-
+#is-correct{
+    text-align: center;
+    margin-top: 20px;
+}
