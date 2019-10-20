@@ -6,6 +6,7 @@ var highScoreButton = document.querySelector("#high-score");
 var timerDisplay = document.querySelector("#timer-display")
 var timerDiv = document.querySelector("#timer");
 var questionsDisplay = document.querySelector("#questions-display");
+var isCorrect = document.querySelector("#is-correct");
 
 
 // Timer: initialize data
@@ -42,7 +43,6 @@ startButton.addEventListener("click", function () {
     timerDisplay.classList.remove("hidden-element");
     questionsDisplay.classList.remove("hidden-element");
     printQuestion();
-    printChoices();
     timeInterval = setInterval(timeCounter, 1000);
 })
 
@@ -51,7 +51,6 @@ startButton.addEventListener("click", function () {
 function timeCounter() {
     counter = counter - 1
     timerDiv.textContent = (counter + " seconds");
-    // printQuestion();
     if (counter < 1) {
         clearInterval(timeInterval);
     }
@@ -61,30 +60,43 @@ function timeCounter() {
 
 
 function printQuestion() {
+
+    var choice1 = document.querySelector("#choice-1");
+    var choice2 = document.querySelector("#choice-2");
+    var choice3 = document.querySelector("#choice-3");
+    var choice4 = document.querySelector("#choice-4");
+
+    var choicesArray = [choice1, choice2, choice3, choice4];
+    for (var i = 0; i < questions[0].choices.length; i++) {
+        choicesArray[i].textContent = questions[0].choices[i];
+
+    }
     questionsDiv.textContent = questions[0].title;
 }
 
 //print choices function
 
-var choice1 = document.querySelector("#choice-1");
-var choice2 = document.querySelector("#choice-2");
-var choice3 = document.querySelector("#choice-3");
-var choice4 = document.querySelector("#choice-4");
-
-var choicesArray = [choice1, choice2, choice3, choice4];
 
 
-function printChoices() {
-    for (var i = 0; i < questions[0].choices.length; i++) {
-        choicesArray[i].textContent = questions[0].choices[i];
 
-    }
+// function printChoices() {
 
+
+//     }
+
+// }
+
+
+if (questions[i].choices[0] === questions[i].answer) {
+    isCorrect.textContent = "Correct!";
+    score++;
 }
-
-
-
-
+else {
+    isCorrect.textContent = "Wrong!";
+    secondsLeft -= 10;
+}
+i++;
+questionSetter();
 
 
 // set choices to correct or incorrect
