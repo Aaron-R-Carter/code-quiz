@@ -61,30 +61,28 @@ function timeCounter() {
 
 function printQuestion() {
 
+    // button selector variables
+
     var choice1 = document.querySelector("#choice-1");
     var choice2 = document.querySelector("#choice-2");
     var choice3 = document.querySelector("#choice-3");
     var choice4 = document.querySelector("#choice-4");
 
+    // array of buttons to input text content
+
     var choicesArray = [choice1, choice2, choice3, choice4];
+
+    //loop to print text of choices 
+
     for (var i = 0; i < questions[0].choices.length; i++) {
         choicesArray[i].textContent = questions[0].choices[i];
-
     }
+
+    //prints question
+
     questionsDiv.textContent = questions[0].title;
 }
 
-//print choices function
-
-
-
-
-// function printChoices() {
-
-
-//     }
-
-// }
 
 
 if (questions[i].choices[0] === questions[i].answer) {
