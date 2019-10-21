@@ -1,3 +1,7 @@
+//global index default
+
+var index = 0;
+
 // div selectors
 
 var titleHeading = document.querySelector("#title-heading");
@@ -7,6 +11,12 @@ var timerDisplay = document.querySelector("#timer-display")
 var timerDiv = document.querySelector("#timer");
 var questionsDisplay = document.querySelector("#questions-display");
 var isCorrect = document.querySelector("#is-correct");
+
+//choice button array creator
+
+var button = document.querySelectorAll(".answer-btn");
+var answerButtonArray = Array.from(button);
+
 
 // divs for questions, choices & answers
 
@@ -36,6 +46,12 @@ var questions = [
         title: "The condition in an if / else statement is enclosed within ____.",
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         answer: "parentheses"
+    },
+
+    {
+        title: "This code quiz game project was how difficult?",
+        choices: ["difficult", "very difficult", "dude wtf", "i quit"],
+        answer: "dude wtf"
     },
 
 ];
@@ -79,15 +95,24 @@ function printQuestion() {
 
     //loop to print text of choices 
 
-    for (var i = 0; i < questions[0].choices.length; i++) {
-        choicesArray[i].textContent = questions[0].choices[i];
-        questionsDiv.textContent = questions[0].title;
+    for (var i = 0; i < questions[index].choices.length; i++) {
+        choicesArray[i].textContent = questions[index].choices[i];
+        questionsDiv.textContent = questions[index].title;
 
     };
 
 }
 
+// event listener for choice buttons click
 
+for (i = 0; i < answerButtonArray.length; i++) {
+
+    answerButtonArray[i].addEventListener("click", function () {
+        index = index + 1;
+        printQuestion();
+    });
+
+};
 
 
 // set choices to correct or incorrect
